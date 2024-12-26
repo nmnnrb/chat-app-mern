@@ -1,0 +1,17 @@
+.app-container {
+  background-image: linear-gradient(rgba(0, 0, 2, .20), rgba(1230, 120, 134, 0.41)), url('https://img.freepik.com/free-vector/messages-light-colour-background_78370-2586.jpg?t=st=1734945177~exp=1734948777~hmac=d0b82d73e8d6e01d11a35fc0c6db65069678f5971ae5c551630160f31ce96d63&w=1800');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    background-attachment: scroll;
+    background-size: auto;
+  }
+}
