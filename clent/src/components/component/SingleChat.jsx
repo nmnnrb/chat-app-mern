@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import ScrollableChat from './ScrollableChat';
 import io from 'socket.io-client';
 import './message.css'
-const ENDPOINT = "http://localhost:8080";
+const ENDPOINT = "https://chat-app-mern-backend-w9ne.onrender.com";
 let socket , selectedChatCompare ;
 
 const SingleChat = ({fetchAgain , setFetchAgain}) => {
@@ -40,7 +40,7 @@ const SingleChat = ({fetchAgain , setFetchAgain}) => {
                 }
             }
             setnewMessage('');
-            const {data} = await axios.post(`http://localhost:8080/api/message`, {content: newMessage , chatId: selectedChat._id}, config);
+            const {data} = await axios.post(`https://chat-app-mern-backend-w9ne.onrender.com/api/message`, {content: newMessage , chatId: selectedChat._id}, config);
             console.log(data);
             socket.emit("new message" , data)
             setMessage([...message, data]); // Corrected typo from messsage to message
@@ -86,7 +86,7 @@ const SingleChat = ({fetchAgain , setFetchAgain}) => {
                 }
             }
             setLoading(true);
-            const {data} = await axios.get(`http://localhost:8080/api/message/${selectedChat._id}` , config);
+            const {data} = await axios.get(`https://chat-app-mern-backend-w9ne.onrender.com/api/message/${selectedChat._id}` , config);
             console.log(data); // Log the fetched data
             setMessage(data);
             setLoading(false);

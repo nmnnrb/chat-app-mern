@@ -36,7 +36,7 @@ const GroupChatModal = ({ children}) => {
                         Authorization: `Bearer ${user.token}`
                     },
                 }
-                const {data}  = await axios.get(`http://localhost:8080/api/user?search=${e}`, config);
+                const {data}  = await axios.get(`https://chat-app-mern-backend-w9ne.onrender.com/api/user?search=${e}`, config);
                 console.log(data);
                 setSearchResults(data);
                 setLoading(false);
@@ -64,7 +64,7 @@ const GroupChatModal = ({ children}) => {
                 },
             };
             console.log('Creating group chat with name:', groupChatName, 'and users:', selectedUser);
-            const { data } = await axios.post('http://localhost:8080/api/chat/group', {
+            const { data } = await axios.post('https://chat-app-mern-backend-w9ne.onrender.com/api/chat/group', {
                 name: groupChatName,
                 users: JSON.stringify(selectedUser.map((u) => u._id))
             }, config);

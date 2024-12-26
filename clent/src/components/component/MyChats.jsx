@@ -19,7 +19,7 @@ const MyChats = ({ fetchAgain, setFetchAgain }) => {
                 },
             };
 
-            const { data } = await axios.get('http://localhost:8080/api/chat', config);
+            const { data } = await axios.get('https://chat-app-mern-backend-w9ne.onrender.com/api/chat', config);
             setChats(data);
         } catch (error) {
             console.log(error);

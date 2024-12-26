@@ -55,7 +55,7 @@ const SideDrawer = () => {
                     },
                 };
 
-                const {data} = await axios.get(`http://localhost:8080/api/user?search=${search}` ,config);
+                const {data} = await axios.get(`https://chat-app-mern-backend-w9ne.onrender.com/api/user?search=${search}` ,config);
                 setLoading(false);
                 setResult(data);
 
@@ -84,7 +84,7 @@ const SideDrawer = () => {
                 },
             };
 
-            const {data} = await axios.post(`http://localhost:8080/api/chat`, {userId} , config);
+            const {data} = await axios.post(`https://chat-app-mern-backend-w9ne.onrender.com/api/chat`, {userId} , config);
             if(!chats.find((c) => c._id === data._id)) setChats([data, ...chats])
             setLoadingChat(false);
             setSelectedChat(data);

@@ -84,7 +84,7 @@ const Signup = () => {
           "Content-type" :  "application/json",
         },
       };
-      const {data}  = await axios.post(`http://localhost:8080/api/user`, {name, email, password, pic: picture}, config);
+      const {data}  = await axios.post(`https://chat-app-mern-backend-w9ne.onrender.com/api/user`, {name, email, password, pic: picture}, config);
       toast.success('User registered successfully');
       localStorage.setItem('userInfo', JSON.stringify(data));
       setLoading(false);

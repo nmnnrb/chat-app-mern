@@ -32,7 +32,7 @@ const UpdateGroupName = ({ fetchAgain, setFetchAgain ,fetchMessages }) => {
         },
       };
       console.log('Renaming group chat to:', groupChatName);
-      const { data } = await axios.put(`http://localhost:8080/api/chat/rename`, { chatId: selectedChat._id, chatName: groupChatName }, config);
+      const { data } = await axios.put(`https://chat-app-mern-backend-w9ne.onrender.com/api/chat/rename`, { chatId: selectedChat._id, chatName: groupChatName }, config);
 
       console.log('Rename response:', data);
       setSelectedChat(data);
@@ -64,7 +64,7 @@ const UpdateGroupName = ({ fetchAgain, setFetchAgain ,fetchMessages }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`http://localhost:8080/api/user?search=${e}`, config);
+      const { data } = await axios.get(`https://chat-app-mern-backend-w9ne.onrender.com/api/user?search=${e}`, config);
       setSearchResults(data);
       setLoading(false);
       setShowSearchResults(true);
@@ -96,7 +96,7 @@ const UpdateGroupName = ({ fetchAgain, setFetchAgain ,fetchMessages }) => {
             },
         };
         console.log('Adding user to group chat:', user1);
-        const { data } = await axios.put('http://localhost:8080/api/chat/groupadd', {
+        const { data } = await axios.put('https://chat-app-mern-backend-w9ne.onrender.com/api/chat/groupadd', {
             chatId: selectedChat._id,
             userId: user1._id,
         }, config);
@@ -128,7 +128,7 @@ const handleRemove = async (user1) => {
             },
         };
         console.log('Removing user from group chat:', user1);
-        const { data } = await axios.put('http://localhost:8080/api/chat/groupremove', {
+        const { data } = await axios.put('https://chat-app-mern-backend-w9ne.onrender.com/api/chat/groupremove', {
             chatId: selectedChat._id,
             userId: user1._id,
         }, config);
