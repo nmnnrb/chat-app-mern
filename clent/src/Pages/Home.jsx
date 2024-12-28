@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Login from '../login-signuop/Login'
 import Signup from '../login-signuop/Signup'
 import { useNavigate } from 'react-router-dom';
+import BackendMessage from './BackendMessage';
 const Home = () => {
   const [activeTab, setActiveTab] = useState('login');
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Home = () => {
       }} className='w-full h-screen flex flex-col justify-center items-center'>
        
           <h1 className='md:text-7xl drop-shadow-xl rounded-lg  bg-white px-8 py-4 font-extrabold text-blue-600'>Let's Connect</h1>
- 
+        <BackendMessage />
       {/* login signup swtch  */}
         <div className="mt-8 p-4 bg-white rounded-md shadow-xl w-96">
           <div className="flex justify-around mb-4">
